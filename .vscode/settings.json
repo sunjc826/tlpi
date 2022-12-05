@@ -64,6 +64,7 @@
     "stop_token": "cpp",
     "thread": "cpp",
     "typeinfo": "cpp",
-    "__nullptr": "cpp"
+    "__nullptr": "cpp",
+    "climits": "cpp"
   }
 }

@@ -1,4 +1,4 @@
-// TODO: For some reason, even with O_APPEND, the output filesize is not correct
+// TODO: For some reason, even with O_APPEND, the output filesize is not correct on a virtual machine
 #include "tlpi_hdr.h"
 #include <sys/stat.h>
 #include <fcntl.h>

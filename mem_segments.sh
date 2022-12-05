@@ -1,0 +1,1 @@
+. 6/6.3/listing-6-1/mem_segments.sh

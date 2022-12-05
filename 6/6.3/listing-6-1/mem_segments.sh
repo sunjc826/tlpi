@@ -1,0 +1,1 @@
+size mem_segments
