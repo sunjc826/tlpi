@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     if (argc < 2 || std::strcmp(argv[1], "--help") == 0)
-        usage_err("%s {-a} <filename>", argv[0]);
+        usage_err("%s [-a] filename", argv[0]);
 
     bool is_append{};
     int opt;

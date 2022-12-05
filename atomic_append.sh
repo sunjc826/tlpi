@@ -1,0 +1,1 @@
+. 5/ex-5-3/atomic_append.sh

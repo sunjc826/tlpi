@@ -2,4 +2,6 @@ a.out
 copy
 seek_io
 my_tee
+lseek_and_append
+atomic_append
 test.txt
