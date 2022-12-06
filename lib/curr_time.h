@@ -1,0 +1,1 @@
+char *curr_time(const char *format);

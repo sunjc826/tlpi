@@ -7,4 +7,7 @@ atomic_append
 mem_segments
 display_env
 modify_env
+calendar_time
+strtime
+show_time
 test.txt
