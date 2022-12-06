@@ -1,0 +1,1 @@
+. 11/11.2/listing-11-2/t_fpathconf.sh

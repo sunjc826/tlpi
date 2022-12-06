@@ -10,4 +10,5 @@ modify_env
 calendar_time
 strtime
 show_time
+t_fpathconf
 test.txt
