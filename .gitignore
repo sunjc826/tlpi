@@ -11,4 +11,5 @@ calendar_time
 strtime
 show_time
 t_fpathconf
+check_password
 test.txt
