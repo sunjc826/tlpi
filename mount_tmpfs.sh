@@ -1,0 +1,1 @@
+. 14/14.10/mount_tmpfs.sh

@@ -12,4 +12,6 @@ strtime
 show_time
 t_fpathconf
 check_password
+direct_read
+my_fstatfs
 test.txt
