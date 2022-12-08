@@ -14,4 +14,11 @@ t_fpathconf
 check_password
 direct_read
 my_fstatfs
+t_unlink
+list_files
+nftw_dir_tree
+view_symlink
+t_dirbasename
 test.txt
+tmpdir
+tmpfile

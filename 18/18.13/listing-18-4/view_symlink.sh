@@ -1,0 +1,1 @@
+view_symlink /proc/self
