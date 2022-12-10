@@ -1,4 +1,8 @@
 a.out
+main
+test.txt
+tmpdir
+tmpfile
 copy
 seek_io
 my_tee
@@ -19,6 +23,7 @@ list_files
 nftw_dir_tree
 view_symlink
 t_dirbasename
-test.txt
-tmpdir
-tmpfile
+ouch
+intquit
+my_initgroups
+idshow

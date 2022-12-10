@@ -1,0 +1,1 @@
+sudo bash 9/9.3/change_check_password.sh

@@ -65,6 +65,7 @@
     "thread": "cpp",
     "typeinfo": "cpp",
     "__nullptr": "cpp",
-    "climits": "cpp"
+    "climits": "cpp",
+    "csignal": "cpp"
   }
 }

@@ -1,0 +1,1 @@
+sudo ./my_initgroups sunjc826 1000
