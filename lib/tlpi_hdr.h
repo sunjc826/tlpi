@@ -30,4 +30,5 @@
 #include "error_functions.h"
 #include "get_num.h"
 #include "ugid_functions.h"
+#include "signal_functions.h"
 #endif

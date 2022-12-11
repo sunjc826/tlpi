@@ -26,4 +26,8 @@ t_dirbasename
 ouch
 intquit
 my_initgroups
+print_sig
 idshow
+sig_sender
+sig_receiver
+
