@@ -30,4 +30,5 @@ print_sig
 idshow
 sig_sender
 sig_receiver
-
+nonreentrant
+t_sigaltstack
