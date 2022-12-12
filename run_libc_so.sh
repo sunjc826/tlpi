@@ -1,0 +1,1 @@
+. 2/run_libc_so.sh
