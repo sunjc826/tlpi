@@ -34,3 +34,5 @@ nonreentrant
 t_sigaltstack
 fork_whos_on_first
 fork_sig_sync
+fork_stdio_buf
+exit_minus1
