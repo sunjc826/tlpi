@@ -3,6 +3,7 @@ main
 test.txt
 tmpdir
 tmpfile
+pacct
 copy
 seek_io
 my_tee
@@ -36,3 +37,18 @@ fork_whos_on_first
 fork_sig_sync
 fork_stdio_buf
 exit_minus1
+multi_wait
+multi_SIGCHLD
+t_execve
+envargs
+t_execlp
+t_execle
+t_execl
+necho
+longest_line
+closeonexec
+t_system
+acct_on
+acct_view
+t_fork
+t_clone
