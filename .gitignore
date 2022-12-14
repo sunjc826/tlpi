@@ -53,3 +53,6 @@ acct_view
 t_fork
 t_clone
 simple_thread
+thread_incr
+thread_incr_mutex
+thread_multijoin
