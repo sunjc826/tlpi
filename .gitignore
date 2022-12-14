@@ -56,3 +56,5 @@ simple_thread
 thread_incr
 thread_incr_mutex
 thread_multijoin
+thread_cancel
+thread_cleanup
