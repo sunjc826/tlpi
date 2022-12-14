@@ -52,3 +52,4 @@ acct_on
 acct_view
 t_fork
 t_clone
+simple_thread
