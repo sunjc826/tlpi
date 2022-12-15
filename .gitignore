@@ -3,6 +3,8 @@ main
 test.txt
 tmpdir
 tmpfile
+samegroup.log
+diffgroup.log
 pacct
 copy
 seek_io
@@ -58,3 +60,5 @@ thread_incr_mutex
 thread_multijoin
 thread_cancel
 thread_cleanup
+t_setsid
+catch_SIGHUP
