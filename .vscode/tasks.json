@@ -60,9 +60,23 @@
     },
     {
       "type": "shell",
+      "label": "remove previous files",
+      "command": "rm",
+      "args": ["out/app/*"]
+    },
+    {
+      "type": "shell",
       "label": "create out dir",
       "command": "mkdir",
-      "args": ["-p", "out/lib", "out/app"]
+      "args": [
+        "-p",
+        "out/lib",
+        "out/app",
+        "out/archive",
+        "out/lib_shared",
+        "out/so"
+      ],
+      "dependsOn": ["remove previous files"]
     },
     {
       "type": "cppbuild",
@@ -127,16 +141,11 @@
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "-std=c++20",
         "${workspaceFolder}/out/lib/*.o",
         "${workspaceFolder}/out/app/*.o",
         "-lcrypt",
         "-o",
-        "${workspaceFolder}/a.out",
-        "-Wall",
-        "-Weffc++",
-        "-Wextra",
-        "-Wsign-conversion"
+        "${workspaceFolder}/a.out"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -147,6 +156,105 @@
         "isDefault": true
       },
       "detail": "Creates executable from out folder."
+    },
+    {
+      "type": "cppbuild",
+      "label": "bin:out/**/*.o,a->a.out",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${workspaceFolder}/out/app/*.o",
+        "-L${workspaceFolder}/out/archive",
+        "-ltlpi",
+        "-lcrypt",
+        "-o",
+        "${workspaceFolder}/a.out"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from out folder."
+    },
+    {
+      "type": "shell",
+      "label": "static_lib:out/lib->libtlpi.a",
+      "command": "ar",
+      "args": [
+        "r",
+        "${workspaceFolder}/out/archive/libtlpi.a",
+        "${workspaceFolder}/out/lib/*.o"
+      ],
+      "dependsOn": ["create out dir"],
+      "problemMatcher": []
+    },
+    {
+      "type": "cppbuild",
+      "label": "obj_shared:lib->out/lib_shared/*.o",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-c",
+        "-fPIC",
+        "-std=c++20",
+        "${workspaceFolder}/lib/*.cpp",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wsign-conversion"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/out/lib_shared"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from out folder.",
+      "dependsOn": ["create out dir"]
+    },
+    {
+      "type": "cppbuild",
+      "label": "so:out/lib_shared/*.o->out/so/libtlpi.so",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-shared",
+        "${workspaceFolder}/out/lib_shared/*.o",
+        "-o",
+        "${workspaceFolder}/out/so/libtlpi.so"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/out/lib_shared"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from out folder.",
+      "dependsOn": ["create out dir"]
+    },
+    {
+      "type": "cppbuild",
+      "label": "bin:out/app/*.o,out/so/*.so->a-dynamic.out",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${workspaceFolder}/out/app/*.o",
+        "${workspaceFolder}/out/so/*.so",
+        "-o",
+        "${workspaceFolder}/a-dynamic.out"
+      ]
     }
   ],
   "version": "2.0.0"

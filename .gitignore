@@ -1,5 +1,8 @@
 *.o
-a.out
+*.a
+*.so
+*.out
+out/
 main
 test.txt
 tmpdir
