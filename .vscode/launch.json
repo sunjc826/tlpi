@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "g++ debug dir",
+      "name": "debug dir",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/a.out",
@@ -24,6 +24,36 @@
         }
       ],
       "preLaunchTask": "bin:cur_dir->a.out",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "debug a-dynamic.out",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/a-dynamic.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        {
+          "name": "LD_LIBRARY_PATH",
+          "value": "./dll"
+        }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
       "miDebuggerPath": "/usr/bin/gdb"
     }
   ],

@@ -62,7 +62,7 @@
       "type": "shell",
       "label": "remove previous files",
       "command": "rm",
-      "args": ["out/app/*"]
+      "args": ["out/app/*", "||", "true"]
     },
     {
       "type": "shell",
@@ -75,8 +75,7 @@
         "out/archive",
         "out/lib_shared",
         "out/so"
-      ],
-      "dependsOn": ["remove previous files"]
+      ]
     },
     {
       "type": "cppbuild",
@@ -103,7 +102,7 @@
         "isDefault": true
       },
       "detail": "Creates object files from current folder.",
-      "dependsOn": ["create out dir"],
+      "dependsOn": ["create out dir", "remove previous files"],
       "dependsOrder": "sequence"
     },
     {
@@ -245,13 +244,38 @@
     },
     {
       "type": "cppbuild",
+      "label": "so-soname:out/lib_shared/*.o->out/so/libtlpi.so",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-shared",
+        "-Wl,-soname,libalias.so",
+        "${workspaceFolder}/out/lib_shared/*.o",
+        "-o",
+        "${workspaceFolder}/out/so/libtlpi.so"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/out/lib_shared"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from out folder.",
+      "dependsOn": ["create out dir"]
+    },
+    {
+      "type": "cppbuild",
       "label": "bin:out/app/*.o,out/so/*.so->a-dynamic.out",
       "command": "/usr/bin/g++",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
+        "-L${workspaceFolder}/out/so",
         "${workspaceFolder}/out/app/*.o",
-        "${workspaceFolder}/out/so/*.so",
+        "-ltlpi",
         "-o",
         "${workspaceFolder}/a-dynamic.out"
       ]
