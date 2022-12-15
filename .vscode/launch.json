@@ -23,7 +23,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build dir for debug",
+      "preLaunchTask": "bin:cur_dir->a.out",
       "miDebuggerPath": "/usr/bin/gdb"
     }
   ],

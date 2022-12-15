@@ -1,0 +1,1 @@
+acct_view /var/log/account/pacct

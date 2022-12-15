@@ -3,6 +3,7 @@
 
 static void handler(int)
 {
+    std::printf("%ld: caught SIGHUP 1\n", static_cast<long>(getpid()));
 }
 
 int main(int argc, char *argv[])
@@ -32,12 +33,12 @@ int main(int argc, char *argv[])
         static_cast<long>(getpgrp()),
         static_cast<long>(getsid(0)));
 
-    alarm(30);
+    alarm(60);
 
     while (true)
     {
         pause();
-        std::printf("%ld: caught SIGHUP\n", static_cast<long>(getpid()));
+        std::printf("%ld: caught SIGHUP 2\n", static_cast<long>(getpid()));
     }
 
     return 0;

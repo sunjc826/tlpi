@@ -1,0 +1,1 @@
+exec disc_SIGHUP d s s > sig.log 2>&1

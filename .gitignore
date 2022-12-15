@@ -1,3 +1,4 @@
+*.o
 a.out
 main
 test.txt
@@ -5,6 +6,7 @@ tmpdir
 tmpfile
 samegroup.log
 diffgroup.log
+sig.log
 pacct
 copy
 seek_io
@@ -62,3 +64,6 @@ thread_cancel
 thread_cleanup
 t_setsid
 catch_SIGHUP
+disc_SIGHUP
+job_mon
+join_with_self
