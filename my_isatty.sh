@@ -1,0 +1,1 @@
+. 62/ex-62-1/my_isatty.sh

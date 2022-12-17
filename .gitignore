@@ -78,3 +78,6 @@ popen_glob
 fifo_seqnum_server
 fifo_seqnum_client
 myfifo
+new_intr
+no_echo
+my_isatty
