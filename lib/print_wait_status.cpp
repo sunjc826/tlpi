@@ -1,4 +1,6 @@
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 #include "print_wait_status.h"
 #include <sys/types.h>
 #include <sys/wait.h>

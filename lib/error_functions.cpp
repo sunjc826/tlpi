@@ -60,7 +60,7 @@ void err_msg(const char *format, ...)
     va_list ap;
     va_start(ap, format);
     int saved_errno{ errno };
-    output_error(true, errno, format, ap);
+    output_error(errno, true, format, ap);
     va_end(ap);
 
     errno = saved_errno;

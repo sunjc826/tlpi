@@ -2,6 +2,36 @@
   "tasks": [
     {
       "type": "cppbuild",
+      "label": "bin[fast]:cur_dir->cur_filename",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-std=c++20",
+        "-I${workspaceFolder}/lib",
+        "-L${workspaceFolder}/out/archive",
+        "${fileDirname}/*.cpp",
+        "-ltlpi",
+        "-lcrypt",
+        "-o",
+        "${workspaceFolder}/${fileBasenameNoExtension}",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wsign-conversion"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from current folder + lib folder."
+    },
+    {
+      "type": "cppbuild",
       "label": "bin:cur_dir->a.out",
       "command": "/usr/bin/g++",
       "args": [
@@ -31,7 +61,7 @@
     },
     {
       "type": "cppbuild",
-      "label": "bin:cur_dir->cur_filename",
+      "label": "bin[slow]:cur_dir->cur_filename",
       "command": "/usr/bin/g++",
       "args": [
         "-fdiagnostics-color=always",
