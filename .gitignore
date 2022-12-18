@@ -82,3 +82,9 @@ myfifo
 new_intr
 no_echo
 my_isatty
+us_xfr_sv
+us_xfr_cl
+ud_ucase_sv
+ud_ucase_cl
+overload_server
+connected_dgram

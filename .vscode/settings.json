@@ -67,6 +67,7 @@
     "__nullptr": "cpp",
     "climits": "cpp",
     "csignal": "cpp",
-    "tlpi_hdr.h": "c"
+    "tlpi_hdr.h": "c",
+    "queue": "cpp"
   }
 }
