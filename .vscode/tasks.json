@@ -309,6 +309,33 @@
         "-o",
         "${workspaceFolder}/a-dynamic.out"
       ]
+    },
+    {
+      "type": "cppbuild",
+      "label": "obj_shared:lib->out/lib_shared/*.o",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-c",
+        "-fPIC",
+        "-std=c++20",
+        "${workspaceFolder}/lib/*.cpp",
+        "-Wall",
+        "-Weffc++",
+        "-Wextra",
+        "-Wsign-conversion"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/out/lib_shared"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Creates executable from out folder.",
+      "dependsOn": ["create out dir"]
     }
   ],
   "version": "2.0.0"

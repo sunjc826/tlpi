@@ -1,7 +1,33 @@
 {
   "configurations": [
     {
-      "name": "debug dir",
+      "name": "debug dir [fast]",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "bin[fast]:cur_dir->cur_filename",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "debug dir [slow]",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/a.out",

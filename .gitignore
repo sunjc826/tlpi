@@ -88,3 +88,7 @@ ud_ucase_sv
 ud_ucase_cl
 overload_server
 connected_dgram
+i6d_ucase_sv
+i6d_ucase_cl
+is_seqnum_sv
+is_seqnum_cl
