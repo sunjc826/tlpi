@@ -28,11 +28,11 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "Creates executable from current folder + lib folder."
+      "detail": "Creates executable from current folder + static_lib."
     },
     {
       "type": "cppbuild",
-      "label": "bin:cur_dir->a.out",
+      "label": "bin[slow]:cur_dir->a.out",
       "command": "/usr/bin/g++",
       "args": [
         "-fdiagnostics-color=always",

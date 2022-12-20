@@ -92,3 +92,6 @@ i6d_ucase_sv
 i6d_ucase_cl
 is_seqnum_sv
 is_seqnum_cl
+t_gethostbyname
+test_become_daemon
+daemon_SIGHUP

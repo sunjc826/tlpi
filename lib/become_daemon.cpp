@@ -14,12 +14,12 @@ int become_daemon(int flags)
     default:
         _exit(EXIT_SUCCESS);
     }
-
-    // I am now a standalone process in a new session
+    // Note that even though this process is in an orphaned process group
+    // there is no SIGHUP sent by the kernel if all members of this orphaned process group are not stopped
 
     if (setsid() == -1)
         return -1;
-
+    // I am now a standalone process in a new session
     switch (fork())
     {
     case -1:
@@ -33,6 +33,7 @@ int become_daemon(int flags)
     // I am now a standalone process in a session, and I am not the session leader.
     // As a result, I will not be able to acquire a controlling terminal when opening a terminal,
     // even if O_NOCTTY is not set
+
 
     if (!(flags & BD_NO_UMASK0))
         umask(0);

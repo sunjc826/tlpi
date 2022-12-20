@@ -1,0 +1,13 @@
+sunjc826@ubuntu:~/Documents/tlpi$ t_gethostbyname translate.google.com
+Canonical name: www3.l.google.com
+	alias(es):    translate.google.com
+	address type: AF_INET
+	address(es):  172.253.118.100 172.253.118.101 172.253.118.138 172.253.118.139 172.253.118.113 172.253.118.102
+
+sunjc826@ubuntu:~/Documents/tlpi$ t_gethostbyname www3.l.google.com
+Canonical name: www3.l.google.com
+	alias(es):    
+	address type: AF_INET
+	address(es):  172.217.194.113 172.217.194.139 172.217.194.102 172.217.194.100 172.217.194.101 172.217.194.138
+
+It appears that gethostbyname does not actually find all the aliases.
