@@ -42,7 +42,7 @@ static int inet_passive_socket(const char *service, int type, socklen_t *addr_le
     addrinfo hint{
         .ai_flags{AI_PASSIVE},
         .ai_family{AF_UNSPEC},
-        .ai_socktype{SOCK_STREAM},
+        .ai_socktype{type},
     };
 
     addrinfo *result;

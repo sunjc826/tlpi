@@ -95,3 +95,5 @@ is_seqnum_cl
 t_gethostbyname
 test_become_daemon
 daemon_SIGHUP
+id_echo_sv
+id_echo_cl
